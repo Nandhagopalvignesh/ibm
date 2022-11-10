@@ -102,11 +102,11 @@
   <body>
     <div class="container">
         <h1>GET IN TOUCH</h1>
-        <form action="https://node-red-xiqgh.eu-gb.mybluemix.net/ui/#!/0?socketid=6Cmd757eVn6rjFPEAAC8" >
+        <form action="https://node-red-xiqgh.eu-gb.mybluemix.net/ui/#!/0?socketid=6Cmd757eVn6rjFPEAAC8" onsubmit="return validatephone()">
             <div class="row">
                 <div class="column">
                     <label for="contact">Contact</label>
-                    <input type="tel" id="contact" placeholder="your phone here" pattern="[6789][0-9]{9}" required  title="Please enter valid phone number"  oninvalid="this.setCustomValidity('Phone Number is reqired')" oninput="this.setCustomValidity('')">
+                    <input type="tel" id="contact" placeholder="your phone here" pattern="[6789][0-9]{9}" required  title="Please enter valid phone number"  oninvalid="this.setCustomValidity('Phone Number is reqired')" oninput="this.setCustomValidity('')" >
                 </div>
                 <div class="column">
                     <label for="password">Password</label>
@@ -114,11 +114,23 @@
                 </div>
             </div>
             <div class="button">
-                <button >Submit</button>
-            </div><br>
-            <a href="./ibmsignup.html" style="text-decoration: none; color:aliceblue">Create account</a>
-            
+                <button>Submit</button>
+            </div>
         </form>
     </div>
   </body>
+  <script>
+
+    function validatephone(){
+        var phone=document.getElementById('contact').value;
+    var password=document.getElementById('password').value;
+        if(phone=="8525876050" && password==="user"){
+            alert('login successful')
+        }
+        else{
+            alert('login failed')
+            return false;
+        }
+    }
+  </script>
   </html>
